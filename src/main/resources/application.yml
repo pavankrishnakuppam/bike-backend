@@ -1,0 +1,29 @@
+spring:
+   session.store-type : none
+   application:
+    name: bike-store
+   datasource:
+      continueOnError: true
+      #local
+      url: jdbc:mysql://localhost:3306/test?useSSL=false
+      username: root
+      password: root
+   jpa:
+     show-sql: true
+     hibernate:
+       ddl-auto: none
+       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+     properties:
+       hibernate:
+         id.new_generator_mappings: true
+         dialect: org.hibernate.dialect.MySQL5Dialect
+---
+spring:
+  jackson:
+    serialization.FAIL_ON_EMPTY_BEANS: false
+
+server:
+  port: 8080
+---
+auth0.issuer: https://pavankuppam.eu.auth0.com/
+auth0.apiAudience: http://localhost:8080
