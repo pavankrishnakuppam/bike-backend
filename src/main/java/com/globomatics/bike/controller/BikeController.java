@@ -15,6 +15,7 @@ public class BikeController {
   @Autowired
   private BikeService bikeService;
 
+  //added comment for devops pipeline
   @GetMapping
   public List<Bike> getAllBikes(){
       List<Bike> bikes = bikeService.getAllBikes();
